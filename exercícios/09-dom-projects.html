@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+     <button id="js-button">Subscribe</button>
+
+    <script>
+        const botao = document.getElementById('js-button')
+
+        function changeButton() {
+                if  (botao.innerHTML  == 'Subscribe'){
+                botao.innerText = 'Subscribed'
+                
+                } else if  (botao.innerHTML == 'Subscribed') {
+                botao.innerText = 'Subscribe'
+                }
+ 
+             }
+
+             botao.addEventListener('click', () => {
+                changeButton()
+             })
+    </script>
+</body>
+</html>

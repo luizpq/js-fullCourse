@@ -74,6 +74,9 @@
             message: 'Good job',
             price: 799
         }
+
+        // SHORTHANDS
+
         // const message = object4.message
         const { message, price } = object4 
         console.log(message)
@@ -81,9 +84,17 @@
 
         const object5 = {
             // message: message
-            message
+            message,
+            /* method: function function1() {
+                console.log('method')
+            } */
+            method() {
+                console.log(method)
+            }
         }
         console.log(object5)
+        object5.method
+
 
     </script>
 </body>
