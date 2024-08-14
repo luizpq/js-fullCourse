@@ -46,8 +46,10 @@
         console.log(product2.rating.stars)
         product2.fun()
 
-        console.log(typeof console.log)
-        
+        console.log(JSON.stringify(product2))
+
+        const jsonString = JSON.stringify(product2)
+        console.log(JSON.parse(jsonString))
     </script>
 </body>
 </html>
