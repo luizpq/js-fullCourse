@@ -4,19 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Projects</title>
+    <style>
+        *{
+            margin: 10px 5px;
+        }
+    </style>
 </head>
 <body>
     <p>YouTube Subscribe Button</p>
-     <button id="js-button">Subscribe</button>
+     <button id="js-button">Subscribe</button><br>
+
+    <label for="Calculate">Amazom Shipping Calculator</label><br>
+    <input type="number" name="" id="Calculate" placeholder="Cost of order" onkeydown="
+    handleCostKeyDown(event)">
+
+    <button id="button" type="submit">Calculate</button>
+    <p class="js-result"></p>
 
     <script>
+        function handleCostKeyDown(event) {
+            if (event.key === 'Enter') {
+            Calculate()
+            }
+        }
+
+        const button = document.getElementById('button')
+        button.addEventListener('click', Calculate)
+
+        function Calculate() {
+            const inputCost = document.getElementById('Calculate')
+            let cost = Number(inputCost.value)
+            
+
+            if (cost < 40 && cost > 1) {
+                cost += 10
+            } 
+            
+            document.querySelector('.js-result')
+                .innerHTML = `$${cost}`
+        }
+
         const botao = document.getElementById('js-button')
 
         function changeButton() {
-                if  (botao.innerHTML  == 'Subscribe'){
+                if (botao.innerText  == 'Subscribe'){
                 botao.innerText = 'Subscribed'
                 
-                } else if  (botao.innerHTML == 'Subscribed') {
+                } else if (botao.innerText == 'Subscribed') {
                 botao.innerText = 'Subscribe'
                 }
  
