@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+        *{
+            margin: 10px 5px;
+        }
+
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        .subscribe-button{
+            background-color: black;
+            color: white;
+            border-radius: 50px;
+            padding: 8px 15px 8px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 30px;
+        }
+
+        .is-subscribed{
+            background-color: rgb( 240, 240, 240);
+            color: black;
+        }
+
+        .cost-input{
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .Calculate-button{
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 10px 15px; 
+            cursor: pointer;
+        }
+    
+    </style>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+     <button class="js-button subscribe-button">Subscribe</button><br>
+
+    <label for="Calculate">Amazom Shipping Calculator</label><br>
+    <input type="number" name="" id="Calculate" class="cost-input"  placeholder="Cost of order" onkeydown="
+    handleCostKeyDown(event)">
+
+    <button id="button" class="Calculate-button" type="submit">Calculate</button>
+    <p class="js-result"></p>
+
+    <script>
+
+        window.document
+        window.console.log('window')
+        window.alert
+
+
+        function handleCostKeyDown(event) {
+            if (event.key === 'Enter') {
+            Calculate()
+            }
+        }
+
+        const button = document.getElementById('button')
+        button.addEventListener('click', Calculate)
+
+        function Calculate() {
+            const inputCost = document.getElementById('Calculate')
+            let cost = Number(inputCost.value)
+            
+
+            if (cost < 40 && cost > 1) {
+                cost += 10
+            } 
+            
+            document.querySelector('.js-result')
+                .innerHTML = `$${cost}`
+        }
+
+        const botao = document.querySelector('.js-button')
+
+        function changeButton() {
+                if (botao.innerText  == 'Subscribe'){
+                botao.innerText = 'Subscribed'
+                botao.classList.add('is-subscribed')
+                
+                } else if (botao.innerText == 'Subscribed') {
+                botao.innerText = 'Subscribe'
+                botao.classList.remove('is-subscribed')
+                }
+ 
+             }
+
+             botao.addEventListener('click', () => {
+                changeButton()
+             })
+    </script>
+</body>
+</html>
